@@ -15,8 +15,8 @@ var bio = {
 var work = {
 	"jobs": [
 		{
-			"employer": "AT&T",
-			"title": "Senior – Technical Process/Quality",
+			"employer": "ATT",
+			"title": "Senior Technical Process/Quality",
 			"location": "Cary, IL",
 			"dates": "2000 - Present",
 			"description": "Worked as a WFE-IEFS Flow Developer."
@@ -63,7 +63,6 @@ var education = {
 		},
 	]
 };
-
 
 
 var biopic = "images/Iman_ID_pic.jpg";
@@ -139,7 +138,6 @@ projects.display = function() {
 		for(var i = 0; i < projects.projects.length; i++) {
 
 
-
 			$("#projects").append(HTMLprojectStart);
 
 			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
@@ -155,10 +153,6 @@ projects.display = function() {
 			for(var img in projects.projects[i].images) {
 				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
 				$(".project-entry:last").append(formattedProjectImage);
-
-
-
-
 			}
 
 
@@ -195,20 +189,8 @@ education.display = function() {
 		}
 
 
-
-
-
-
-
 		if(education.onlineCourses.length > 0) {
 			$("#education").append(HTMLonlineClasses);
-
-
-
-
-
-
-
 
 
 			for(var i = 0; i < education.onlineCourses.length; i++) {
