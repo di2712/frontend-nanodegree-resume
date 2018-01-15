@@ -1,37 +1,35 @@
 var bio = {
-	"name": "Paula",
-	"role": "Web Devepoler",
+	"name": "David",
+	"role": "Front-End Web Devepoler",
 	"contacts": {
-		"mobile": "123",
-		"email": "paula@udacity.com",
-		"github": "Paula",
-		"twitter": "@Paula",
-		"location": "Planet Earth",
+		"email": "di2712@att.com",
+		"github": "David Iman",
+		"twitter": "@quadatic20",
+		"location": "Illinois",
 	},
-	"biopic": ["images/cartoon.jpg"],
+	"biopic": ["images/Iman_ID_pic.jpg"],
 	"welcomeMessage": "Welcome to My Project",
-	"skills": ["HTML", "CSS", "JavaScript", "PhotoShop", "DreamWeaver" ]
+	"skills": ["HTML", "CSS", "JavaScript", "jQuery"]
 };
-
 
 var work = {
 	"jobs": [
 		{
-			"employer": "Vogue Magazine",
-			"title": "Designer",
-			"location": "Brooklyn, NY",
-			"dates": "January 2000",
-			"description": "Worked as designer for the Vogue Magazine."
-		
+			"employer": "AT&T",
+			"title": "Senior – Technical Process/Quality",
+			"location": "Cary, IL",
+			"dates": "2000 - Present",
+			"description": "Worked as a WFE-IEFS Flow Developer."
+
 		},
 		{
-			"employer": "Glamour Magazine",
-			"title": "Web Designer",
-			"location": "Manhattan, NY",
-			"dates": "1998 - 1999",
-			"description": "Worked designing web sites for the Glamour Magazine." 
+			"employer": "US Navy",
+			"title": "Communications",
+			"location": "San Diego, CA",
+			"dates": "1983 - 2000",
+			"description": "Worked various jobs in Communications field."
 		},
-		
+
 	]
 };
 
@@ -39,122 +37,83 @@ var work = {
 var projects = {
 	"projects": [
 		{
-			"title": "Vogue Magazine",
-			"dates": "2014",
-			"description": "Worked as Graphic Designer for the Vogue Magazine",
-			"images": ["images/vogue.jpg"],
-			
+			"title": "IEFS WFE Devepoler",
+			"dates": "2014-Present",
+			"description": "Worked as IEFS WFE flow Developer for AT&T",
+			"images": ["images/ATT_Globe.jpg"],
+
 		},
 	]
 };
-
-
 
 var education = {
 	"schools": [
-		{ "name": "USP - Art Department",
-			"dates": "2001",
-			"location": "New York",
-			"degree": "Web Design",
-			"majors": [ "Web Design" ],
-			"url": "https://www.udacity.com"
-		}		
-		
-		
+		{ "name": "WFE Development",
+			"dates": "2012",
+			"location": "Illinois",
+			"degree": "WF Flow Developer",
+		}
 	],
-	
-		
-	
+
 	"onlineCourses": [
-		{ "school": "SENAC",
-			"title": "PhotoShop",
-			"dates": "2015",
-			"url": "https://www.udacity.com"
+		{ "school": "Code School",
+			"title": "Try jQuery",
+			"dates": "2017",
+			"url": "http://try.jquery.com/."
 		},
 	]
 };
 
 
 
-bio.display = function() {
+var biopic = "images/Iman_ID_pic.jpg";
+var formattedbioPic = HTMLbioPic.replace("%data%", biopic);
 
 
-    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    var formattedName = HTMLheaderName.replace("%data%", bio.name);
-    var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedName);
-    $("#header").append(formattedPic);
-
-
-
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+var formattedContactInfo = [];
+formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
+formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
+formattedContactInfo.push(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
 
 
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").append(formattedBioPic);
+$("#header").append(formattedWelcomeMsg);
 
-    var contactArray = [];
-    contactArray.push(formattedMobile, formattedEmail, formattedTwitter, formattedGithub, formattedLocation);
+if(bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
 
-
-
-    contactLength = contactArray.length
-    for (var i = 0; i < contactLength; i++) {
-        $("#topContacts").append(contactArray[i]);
-    }
-
-
-    for (var i = 0; i < contactLength; i++) {
-        $("#footerContacts").append(contactArray[i]);
-    }
-	
-
-	
-    var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedWelcomeMsg);
-	
-	
-	
-		   var formattedskillsStart = HTMLskillsStart.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedskillsStart);
-
-
-
-	if(bio.skills.length > 0 ) {
-    $('#header').append(HTMLskillsStart);
-    for(var i = 0; i < bio.skills.length; i++) {
-            var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
-            $("#skills").append(formattedSkills);
-        }
+for( var i = 0; i < bio.skills.length; i++ ) {
+  $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
 }
 
-			
-	
+}
 
 
 
-
-
-   
-		
-	
-};
+for(var i = 0; i < formattedContactInfo.length; i++) {
+	$("#topContacts").append(formattedContactInfo[i]);
+	$("#footerContacts").append(formattedContactInfo[i]);
+}
 
 
 
 work.display = function() {
-	
+
 	if(work.jobs.length > 0) {
-	
+
 		$("#workExperience").append(HTMLworkStart);
 
 		for(var i = 0; i < work.jobs.length; i++) {
-		
-			
+
+
 			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
 			var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
 			var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
@@ -171,20 +130,16 @@ work.display = function() {
 
 	}
 
-};
+}
 
 work.display();
-
-
-
-
 
 projects.display = function() {
 	if(projects.projects.length > 0) {
 		for(var i = 0; i < projects.projects.length; i++) {
-			
-					
-		
+
+
+
 			$("#projects").append(HTMLprojectStart);
 
 			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
@@ -196,17 +151,16 @@ projects.display = function() {
 			$(".project-entry:last").append(formattedProjectDescription);
 
 
-				
-				
-				for(var j = 0; j < projects.projects[i].images.length; j++) {
-				var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[j]);
-				$(".project-entry:last").append(formattedprojectImage);
-			
-	
-				
-				
+
+			for(var img in projects.projects[i].images) {
+				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
+				$(".project-entry:last").append(formattedProjectImage);
+
+
+
+
 			}
-			
+
 
 		}
 	}
@@ -218,48 +172,48 @@ education.display = function() {
 	if(education.schools.length > 0 || education.onlineCourses.length > 0) {
 		for(var i = 0; i < education.schools.length; i++) {
 			$("#education").append(HTMLschoolStart);
-			
-	
+
+
 
 			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", education.schools[i].url);
 			var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
 			var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
-			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);			
+			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
 			var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
 			var formattedschoolURL = HTMLschoolURL.replace("%data%", education.schools[i].url);
 
-	
-			
-			
+
+
+
 
 			$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
 			$(".education-entry:last").append(formattedSchoolDates);
 			$(".education-entry:last").append(formattedSchoolLocation);
 			$(".education-entry:last").append(formattedSchoolMajor);
 			$(".education-entry:last").append(formattedschoolURL);
-			
+
 		}
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
 
 		if(education.onlineCourses.length > 0) {
 			$("#education").append(HTMLonlineClasses);
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			for(var i = 0; i < education.onlineCourses.length; i++) {				
+
+
+
+
+
+
+
+
+
+			for(var i = 0; i < education.onlineCourses.length; i++) {
 				$("#education").append(HTMLschoolStart);
-					
+
 				var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
 				var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
 				var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
@@ -270,7 +224,7 @@ education.display = function() {
 				$(".education-entry:last").append(formattedOnlineURL);
 			}
 		}
-		
+
 	}
 };
 
@@ -281,3 +235,5 @@ $("#mapDiv").append(googleMap);
 
 bio.display();
 work.display();
+projects.display();
+education.display();
