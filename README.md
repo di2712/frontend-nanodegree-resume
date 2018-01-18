@@ -1,4 +1,4 @@
 Interactive Resume
 ==================
 
-Resume hosted on github at [DavidIman.github.io/frontend-nanodegree-resume](http://DavidIman.github.io/frontend-nanodegree-resume/)
+Resume hosted on github at (https://di2712.github.io/frontend-nanodegree-resume/)
