@@ -3,4 +3,4 @@ Interactive Resume
 
 David J. Iman
 
-Resume hosted on github at [davidiman.github.io/resume](http://cherylcourt.github.io/resume/)
+Resume hosted on github at (https://github.com/di2712/frontend-nanodegree-resume)
