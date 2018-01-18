@@ -1,7 +1,6 @@
 Interactive Resume
 ==================
 
-Original code part of project 2 from Udacity's Front End Web Development Nanodegree.
-This represents my online resume that was created for project 2.
+David J. Iman
 
 Resume hosted on github at [davidiman.github.io/resume](http://cherylcourt.github.io/resume/)
