@@ -94,9 +94,9 @@ bio.display = function() {
  }
 }
 
-  for(var i = 0; i < formattedContactInfo.length; i++) {
-      $("#topContacts").append(formattedContactInfo[i]);
-      $("#footerContacts").append(formattedContactInfo[i]);
+  for(var j = 0; j < formattedContactInfo.length; j++) {
+      $("#topContacts").append(formattedContactInfo[j]);
+      $("#footerContacts").append(formattedContactInfo[j]);
   }
 };
 
@@ -141,8 +141,8 @@ projects.display = function() {
 			$(".project-entry:last").append(formattedProjectDescription);
 
 
-			for(var i = 0; i < projects.projects; i++) {
-				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
+			for(var j = 0; j < projects.projects; j++) {
+				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[j].images[img]);
 				$(".project-entry:last").append(formattedProjectImage);
 			}
 		}
