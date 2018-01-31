@@ -141,8 +141,8 @@ projects.display = function() {
 			$(".project-entry:last").append(formattedProjectDescription);
 
 
-			for(var j = 0; j < projects.projects; j++) {
-				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[j].images[img]);
+			for(var j = 0; j < projects.projects[i].images.length; j++) {
+				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[j]);
 				$(".project-entry:last").append(formattedProjectImage);
 			}
 		}
